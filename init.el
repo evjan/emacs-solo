@@ -3940,8 +3940,6 @@ As seen on: https://www.reddit.com/r/emacs/comments/1kfblch/need_help_with_addin
 (require 'emacs-solo-container)
 (require 'emacs-solo-clipboard)
 (require 'emacs-solo-eldoc-box)
-(require 'emacs-solo-khard)
-(require 'emacs-solo-khal)
 (require 'emacs-solo-flymake-eslint)
 (require 'emacs-solo-erc-image)
 (require 'emacs-solo-gh)
