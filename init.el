@@ -2772,9 +2772,9 @@ and restart Flymake to apply the changes."
 ;;; │ MINIBUFFER
 (use-package minibuffer
   :ensure nil
-  :bind (:map minibuffer-visible-completions-up-down-map
-              ("C-n" . minibuffer-next-completion)
-              ("C-p" . minibuffer-previous-completion))
+  ;; :bind (:map minibuffer-visible-completions-up-down-map
+  ;;             ("C-n" . minibuffer-next-completion)
+  ;;             ("C-p" . minibuffer-previous-completion))
   :custom
   (completion-auto-help t)
   (completion-auto-select t)
@@ -2792,6 +2792,14 @@ and restart Flymake to apply the changes."
   (read-buffer-completion-ignore-case t)
   (read-file-name-completion-ignore-case t)
   :config
+  ;; EMACS-31: this keymap only exists on Emacs 31+. Guard so the config
+  ;; loads cleanly on 30.x
+  (when (boundp 'minibuffer-visible-completions-up-down-map)
+    (keymap-set minibuffer-visible-completions-up-down-map
+                "C-n" #'minibuffer-next-completion)
+    (keymap-set minibuffer-visible-completions-up-down-map
+                "C-p" #'minibuffer-previous-completion))
+
   ;; There's a bug with C-x p p when you have both
   ;; completion-eager-update and completion-eager-display set to t
   (unless emacs-solo-enable-icomplete
