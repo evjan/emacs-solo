@@ -510,7 +510,7 @@ parent directory created."
   (setopt viper-custom-file-name (emacs-solo--cache-path 'viper-custom-file-name))
 
   ;; Set line-number-mode with relative numbering
-  (setq display-line-numbers-type 'relative)
+  ;; (setq display-line-numbers-type 'relative)
   (add-hook 'prog-mode-hook #'display-line-numbers-mode)
   (add-hook 'text-mode-hook #'display-line-numbers-mode)
 
