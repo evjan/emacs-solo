@@ -1,10 +1,8 @@
-#+AUTHOR: Rahul Martim Juliato
-#+EMAIL: rahul.juliato@gmail.com
+#+AUTHOR: Peter Evjan
+#+EMAIL: hello@peterevjan.com
 #+OPTIONS: toc: nil
 
 #+HTML: <p align="center">
-#+HTML:   <img src="https://github.com/LionyxML/emacs-solo/releases/download/assets/emacs-solo-logo.png" alt="Project Logo" width="300"/>
-#+HTML:   <br/>
 #+HTML:   <img src="https://img.shields.io/badge/Emacs-30%2B-green.svg" alt="Emacs 30+"/>
 #+HTML:   <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="GPLv3 License"/>
 #+HTML: </p>
@@ -13,35 +11,11 @@
 #+HTML:   A <em>fast</em>, <em>powerful</em> and <em>modular</em> Emacs configuration that favors built-in functionality over third-party packages.
 #+HTML: </p>
 
-#+HTML: <p align="center">
-#+HTML:   <a href="#obligatory-screenshots"><strong>Screenshots</strong></a> ·
-#+HTML:   <a href="#as-seen-on-system-crafters"><strong>System Crafters Demo</strong></a> ·
-#+HTML:   <a href="#minimum-emacs-version"><strong>Emacs Version</strong></a> ·
-#+HTML:   <a href="#optional-dependencies"><strong>Optional Dependencies</strong></a> ·
-#+HTML:   <a href="#installation"><strong>Installation</strong></a> ·
-#+HTML:   <a href="#disclaimer"><strong>Disclaimer</strong></a> ·
-#+HTML:   <a href="#how-do-i"><strong>FAQ</strong></a>
-#+HTML: </p>
-
 #+HTML: <hr />
 
 * Emacs Solo
 
-This is what you see as soon as you start Emacs:
-
-
-#+BEGIN_SRC elisp
-  ███████╗███╗   ███╗ █████╗  ██████╗███████╗    ███████╗ ██████╗ ██╗      ██████╗
-  ██╔════╝████╗ ████║██╔══██╗██╔════╝██╔════╝    ██╔════╝██╔═══██╗██║     ██╔═══██╗
-  █████╗  ██╔████╔██║███████║██║     ███████╗    ███████╗██║   ██║██║     ██║   ██║
-  ██╔══╝  ██║╚██╔╝██║██╔══██║██║     ╚════██║    ╚════██║██║   ██║██║     ██║   ██║
-  ███████╗██║ ╚═╝ ██║██║  ██║╚██████╗███████║    ███████║╚██████╔╝███████╗╚██████╔╝
-  ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝
-
-    Loading time : 0.172725 seconds
-    Packages     : 0
-#+END_SRC
-
+A fork of the excellent LionyxML/emacs-solo
 
 Emacs Solo is a configuration I use when I want to go back to the
 roots and challenge myself by using Emacs with only built-in features.
@@ -161,14 +135,6 @@ It is recommended you have these programs in your system:
   documents like PDFs.
 
 
-- =gls=
-
-  MacOS comes with an implementation of =ls= that misses some nice
-  switches from the gnu implementation (=gls= on homebrew). If you opt
-  to use MacOS default =ls= you might need to change the
-  =dired-listing-switches= variable.
-
-
 - =curl=
 
   Only needed if you'd like to upload text/images directly to 0x0.st
@@ -185,55 +151,20 @@ It is recommended you have these programs in your system:
   instead of the internal fetcher.
 
 
-- =mpv=
-
-  Only needed if you'd like to play videos directly from news in
-  =newsticker=, play music from dired with dired music player =C-c m=,
-  play something from a m3u file with =M-x m3u-visualizer-open-buffer=,
-  listen to online radio with =C-c r=, or play YouTube results from
-  =emacs-solo-yt=.
-
-
-- =rsync=
-
-  Only needed if you'd like to use =emacs-solo/dired-rsync-copy=.
-
-
 - =ollama=
 
   Only needed if you'd like to use =emacs-solo/ollama-run-model=.
 
-
-- =gemini-cli=
-
-  Only needed if you'd like to use =emacs-solo/gemini-chat=.
 
 - =claude=
 
   Only needed if you'd like to use =emacs-solo/claude-chat=.
 
 
-- =khard=
-
-  Only needed if you'd like to use =emacs-solo/khard-...= functions.
-
-
-- =yt-dlp=
-
-  Only needed if you'd like to use =youtube-search-async= from
-  =emacs-solo-yt=.
-
-
 - =gh= (GitHub CLI)
 
   Only needed if you'd like to use the GitHub interface from
   =emacs-solo-gh= (PRs, issues, notifications).
-
-
-- =docker= / =podman=
-
-  Only needed if you'd like to use the container management UI from
-  =emacs-solo-container=.
 
 
 - =biome= / =prettier= / =shfmt=
