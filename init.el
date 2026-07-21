@@ -1400,9 +1400,10 @@ away from the bottom.  Counts wrapped lines as real lines."
   (dired-guess-shell-alist-user
    `(("\\.\\(png\\|jpe?g\\|tiff\\)" ,(if (eq system-type 'darwin) "open" "xdg-open"))
      ("\\.\\(mp[34]\\|m4a\\|ogg\\|flac\\|webm\\|mkv\\)" "mpv")
-     (".*" ,(if (eq system-type 'darwin) "open" "xdg-open"))))
+     (".*" ,(if (
+                 eq system-type 'darwin) "open" "xdg-open"))))
   (dired-kill-when-opening-new-dired-buffer t)
-  (dired-listing-switches "-alh --group-directories-first")
+  (dired-listing-switches "-alh")
   (dired-omit-files "^\\.")                                ; with dired-omit-mode (C-x M-o)
   (dired-hide-details-hide-absolute-location t)            ; EMACS-31
   (image-dired-dir (emacs-solo--cache-path 'image-dired-dir))
@@ -3862,7 +3863,7 @@ As seen on: https://www.reddit.com/r/emacs/comments/1kfblch/need_help_with_addin
   :if (>= emacs-major-version 31)
   :ensure nil
   :mode ("\\.md\\'" "\\.mdx\\'" "\\.markdown\\'")
-  init (load-library "markdown-ts-mode"))
+  :init (load-library "markdown-ts-mode"))
 
 
 ;;; │ YAML-TS-MODE
