@@ -1,6 +1,8 @@
 # Gitignore file
 # Remove backup files
+backups
 *#
+
 *.
 *.elc
 *.eln

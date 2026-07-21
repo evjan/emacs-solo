@@ -754,12 +754,12 @@ or is an ERC buffer."
 
   (with-current-buffer (get-buffer-create "*scratch*")
     (insert (format ";;
-;; ███████╗███╗   ███╗ █████╗  ██████╗███████╗    ███████╗ ██████╗ ██╗      ██████╗
-;; ██╔════╝████╗ ████║██╔══██╗██╔════╝██╔════╝    ██╔════╝██╔═══██╗██║     ██╔═══██╗
-;; █████╗  ██╔████╔██║███████║██║     ███████╗    ███████╗██║   ██║██║     ██║   ██║
-;; ██╔══╝  ██║╚██╔╝██║██╔══██║██║     ╚════██║    ╚════██║██║   ██║██║     ██║   ██║
-;; ███████╗██║ ╚═╝ ██║██║  ██║╚██████╗███████║    ███████║╚██████╔╝███████╗╚██████╔╝
-;; ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝
+;; ███████╗███╗   ███╗ █████╗  ██████╗███████╗
+;; ██╔════╝████╗ ████║██╔══██╗██╔════╝██╔════╝
+;; █████╗  ██╔████╔██║███████║██║     ███████╗
+;; ██╔══╝  ██║╚██╔╝██║██╔══██║██║     ╚════██║
+;; ███████╗██║ ╚═╝ ██║██║  ██║╚██████╗███████║
+;; ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝
 ;;
 ;;   Loading time : %s
 ;;   Packages     : %s
@@ -941,6 +941,16 @@ If ###@### is found, remove it and place point there at the end."
   (advice-add 'compilation-start :after #'emacs-solo/ignore-compilation-status)
 
   (add-hook 'compilation-filter-hook #'ansi-color-compilation-filter))
+
+(defun save-and-recompile ()
+  "Save the current buffer and recompile."
+  (interactive)
+  (save-buffer)
+  (recompile))
+
+;; Keybindings
+(keymap-global-set "C-c r" 'save-and-recompile)
+
 
 
 ;;; │ WINDOW
@@ -3852,6 +3862,12 @@ As seen on: https://www.reddit.com/r/emacs/comments/1kfblch/need_help_with_addin
    (go-mod-ts-mode-hook . emacs-solo/go-common-setup))
   :defer t)
 
+;; Stop putting backups in git source dirs etc
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+
+
+
+
 ;;; ├──────────────────── EMACS-SOLO Extra Packages
 ;;  │
 ;;  │ Self-contained modules that live under the `lisp/' directory.
@@ -3897,6 +3913,8 @@ As seen on: https://www.reddit.com/r/emacs/comments/1kfblch/need_help_with_addin
 (require 'emacs-solo-eldoc-box)
 (require 'emacs-solo-flymake-eslint)
 (require 'emacs-solo-gh)
+
+(require 'git-utils)
 
 (provide 'init)
 ;;; └ init.el ends here
