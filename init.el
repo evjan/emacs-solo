@@ -53,15 +53,6 @@
 ;;; ┌──────────────────── EMACS SOLO CUSTOM OPTIONS
 ;;
 ;;  Some features Emacs Solo provides you can turn on/off
-(defcustom emacs-solo-enable-outline-init t
-  "Enable init.el starting all collapsed."
-  :type 'boolean
-  :group 'emacs-solo)
-
-(defcustom emacs-solo-enable-transparency nil
-  "Enable `emacs-solo-transparency'."
-  :type 'boolean
-  :group 'emacs-solo)
 
 (defcustom emacs-solo-icon-modules
   '(dired eshell ibuffer)
@@ -422,10 +413,8 @@ parent directory created."
                (string-match-p "init\\.el\\'" (buffer-file-name)))
       (outline-minor-mode 1)
       (declare-function outline-hide-sublevels "")
+
       (outline-hide-sublevels 1)))
-  (when emacs-solo-enable-outline-init
-    (declare-function emacs-solo/outline-init-file "")
-    (add-hook 'emacs-lisp-mode-hook #'emacs-solo/outline-init-file))
 
   ;; Make C-x 5 o repeatable
   (defvar-keymap frame-repeat-map
