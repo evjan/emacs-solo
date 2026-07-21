@@ -465,7 +465,7 @@ parent directory created."
 
   ;; MacOS specific customizations
   (when (eq system-type 'darwin)
-    (setq insert-directory-program "gls")
+    (setq insert-directory-program "ls")
     (setq mac-command-modifier 'meta))
 
   ;; We want auto-save, but no #file# cluterring, so everything goes under our config cache/
@@ -3930,29 +3930,22 @@ As seen on: https://www.reddit.com/r/emacs/comments/1kfblch/need_help_with_addin
           90)
 (require 'emacs-solo-rainbow-delimiters)
 (require 'emacs-solo-project-select)
-(require 'emacs-solo-viper-extensions)
 (require 'emacs-solo-highlight-keywords)
 (require 'emacs-solo-gutter)
+
 (require 'emacs-solo-ace-window)
 (require 'emacs-solo-olivetti)
-(require 'emacs-solo-temp-sharing)
-(require 'emacs-solo-cl)
-(require 'emacs-solo-sudo-edit)
 (require 'emacs-solo-replace-as-diff)
-(require 'emacs-solo-rate)
 (require 'emacs-solo-how-in)
 (require 'emacs-solo-ai)
 (require 'emacs-solo-dired-gutter)
-(require 'emacs-solo-dired-mpv)
 (require 'emacs-solo-icons)
 (require 'emacs-solo-icons-dired)
 (require 'emacs-solo-icons-ibuffer)
 (require 'emacs-solo-icons-eshell)
-(require 'emacs-solo-container)
 (require 'emacs-solo-clipboard)
 (require 'emacs-solo-eldoc-box)
 (require 'emacs-solo-flymake-eslint)
-(require 'emacs-solo-erc-image)
 (require 'emacs-solo-gh)
 
 (provide 'init)
