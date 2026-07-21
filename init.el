@@ -3550,7 +3550,7 @@ minimal keybindings (q kills the window, n/p move by line)."
   :ensure nil
   ;; :hook (after-init-hook . display-time-mode) ;; If we'd like to see it on the mode-line
   :custom
-  (world-clock-time-format "%A %d %B %r %Z")
+  (world-clock-time-format "%A %d %B %H:%M:%S %Z")
   (world-clock-sort-order "%FT%T") ; EMACS-31
   (display-time-day-and-date t)
   (display-time-default-load-average nil)
