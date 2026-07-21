@@ -3861,7 +3861,8 @@ As seen on: https://www.reddit.com/r/emacs/comments/1kfblch/need_help_with_addin
 (use-package markdown-ts-mode
   :if (>= emacs-major-version 31)
   :ensure nil
-  :defer t)
+  :mode ("\\.md\\'" "\\.mdx\\'" "\\.markdown\\'")
+  init (load-library "markdown-ts-mode"))
 
 
 ;;; │ YAML-TS-MODE
